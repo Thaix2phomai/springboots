@@ -1,82 +1,64 @@
-let products = [
-    {
-        name: "Iphone 13 Pro Max", // Tên sản phẩm
-        price: 3000000, // Giá mỗi sản phẩm
-        brand: "Apple", // Thương hiệu
-        count: 2, // Số lượng sản phẩm trong giỏ hàng
-    },
-    {
-        name: "Samsung Galaxy Z Fold3",
-        price: 41000000,
-        brand: "Samsung",
-        count: 1,
-    },
-    {
-        name: "IPhone 11",
-        price: 15500000,
-        brand: "Apple",
-        count: 1,
-    },
-    {
-        name: "OPPO Find X3 Pro",
-        price: 19500000,
-        brand: "OPPO",
-        count: 3,
-    },
-]
+//bài 1
+//ý 1
+const para = document.getElementById("text")
+para.style.color = "#777"
 
-// 6
-function addProduct (arr, newName, newPrice, newBrand, newCount){
-    let newProduct = {
-        name: newName,
-        price: newPrice,
-        brand: newBrand,
-        count: newCount
-    }
-    arr.push(newProduct)
-    return arr
+//ý 2
+para.style.fontSize = "2rem"
 
-}
+//ý 3
+para.innerHTML = "Tôi có thể làm <em> bất cứ điều gì </em> tôi muốn với JavaScript."
 
-console.log(addProduct(products, "ádas", 195000, "Cheese", 2))
+//bài 2
+
+const allLi = document.querySelectorAll("p + ul li")
+console.log(allLi)
+allLi.forEach(element => {
+    element.style.color = "blue"
+});
+
+//bài 3
+// ý 1 ( thêm )
+const li7 = document.querySelector("ul + ul li:last-child")
+console.log(li7)
+const li8 = document.createElement("li");
+li8.innerText = "Item 8";
+const li9 = document.createElement("li");
+li9.innerText = "Item 9";
+const li10 = document.createElement("li");
+li10.innerText = "Item 10";
+li7.insertAdjacentElement("afterend", li8)
+li8.insertAdjacentElement("afterend", li9)
+li9.insertAdjacentElement("afterend", li10)
 
 
-//7
-function deleteProduct (arr){
-    let brand = "Samsung"
-    return arr.filter(product => product.brand != brand )
-}
+// ý 2 
+const li1 = document.querySelector("ul + ul li")
+console.log(li1)
+li1.style.color = "red"
 
-console.log(deleteProduct(products))
+// ý 3 
+const li3 = document.querySelector("ul + ul li:nth-child(3)")
+console.log(li3)
+li3.style.backgroundColor = "green"
 
+// ý 4 (xóa)
+li3.nextElementSibling.parentElement.removeChild(li3.nextElementSibling)
 
-//8
-
-function sortbyprice1 (arr) {
-    return arr.sort((a,b) => a.price - b.price)
-}
-console.log(sortbyprice1(products))
-
-//9
-
-function sortbyprice2 (arr) {
-    return arr.sort((a,b) => b.price - a.price)
-}
-console.log(sortbyprice2(products))
+// ý 5 (thêm)
+// const newLi4 = document.createElement("li");
+// newLi4.innerText = "New Item 4"
+li3.insertAdjacentHTML("afterend", "<li> New Item 4 </li>")
 
 
-//10
 
-function getTwoRandonProduct(arr) {
-    let newArr = []
-    while (newArr.length < 2){
-        let randomNum = Math.floor(Math.random() * arr.length);
-        if(!newArr.includes(arr[randomNum])) {
-            newArr.push(arr[randomNum]);
-        }
-    }
-   
-    return newArr;
-}
-console.log(getTwoRandonProduct(products));
+
+
+
+
+
+
+
+
+
 
