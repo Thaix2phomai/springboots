@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>AddEmployers</title>
+</head>
+<body>
+<h1 style="color: red;">Create a Employer:</h1>
+<a href="/employer/list" >Employers list</a>
+<br></br>
+<form th:action="@{/employer/add}"
+      th:object="${employer}" method="POST">
+    Name:</br><input type="text" th:field="*{name}"/></br>
+    Website:</br><input type="text" th:field="*{website}"/></br>
+    Email:</br><input type="text" th:field="*{email}"/></br>
+    Address:</br><input type="text" th:field="*{address}"/></br>
+    </br><button type="submit" value="Create"></button></br>
+
+</form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employer list</title>
+</head>
+<body>
+<h1 style="color: red;"> Employers List </h1>
+<a href="/employer/add" >Add an employer</a>
+<br><br/>
+<table border="1" style="border-collapse: collapse; width: 50%" >
+    <thead >
+    <tr >
+        <th>STT</th>
+        <th>Name</th>
+        <th>Website</th>
+        <th>Email</th>
+        <th>Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employer, iStat:${employers}">
+        <th scope="row" th:text = "${iStat.index}+1"></th>
+        <td th:text="${employer.name}">Name</td>
+        <td th:text="${employer.website}">Website</td>
+        <td th:text="${employer.email}">Email</td>
+        <td th:text="${employer.address}">Address</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
