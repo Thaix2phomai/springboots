@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      input:focus::placeholder {
+        color: transparent;
+      }
+
+      .button:hover {
+		color: white;
+        background-color: black;
+        transition: 0.7s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <h1>BMI CALCULATE</h1>
+      <br />
+      <div>
+        height :
+        <input type="text" id="height" placeholder="enter from the keyboard" />
+        <br />
+        <br />
+        weight :
+        <input type="text" id="weight" placeholder="enter from the keyboard" />
+      </div>
+      <br />
+      <div class="btn">
+        <button id="button-get" class="button">get</button>
+        <button id="button-post"class="button">post</button>
+      </div>
+      <br />
+      <div>result : <input type="text" id="result" placeholder="result" /></div>
+      <br />
+      <div class="rs">
+        <button id="reset" class="button">refresh</button>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
