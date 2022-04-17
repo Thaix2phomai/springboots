@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head th:replace="template.html :: header('Add employer')"></head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container">
+        <a class="navbar-brand" href="/job/list">List Job</a>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mt-5">
+          <h1>Thêm công việc</h1>
+          <form
+            action="#"
+            th:action="@{/job/add}"
+            th:object="${job}"
+            method="post"
+          >
+            <label for="name" class="col-sm-2 col-form-label">Title</label>
+            <input
+              type="text"
+              placeholder="title"
+              th:field="*{title}"
+            /><br /><br />
+
+            <label for="name" class="col-sm-2 col-form-label">Company</label>
+            <select
+                  class="form-control"
+                  th:field="${job.emp_id}"
+                  th:object="${employer}"
+                >
+                  <option
+                    th:each="employer : ${employers}"
+                    th:value="${employer.name}"
+                    th:text="${employer.name}"
+                  ></option>
+                </select>
+            <br /><br />
+
+            <label for="name" class="col-sm-2 col-form-label">Description</label
+            >
+            <input
+              type="text"
+              placeholder="description"
+              th:field="*{description}"
+            /><br /><br />
+
+            <label for="name" class="col-sm-2 col-form-label">City</label>
+            <select th:field="*{city}">
+              <option th:value="'HaNoi'" th:text="HaNoi"></option>
+              <option th:value="'HoChiMinh'" th:text="HoChiMinh"></option>
+              <option th:value="'DaNang'" th:text="DaNang"></option>
+              <option th:value="'HaiPhong'" th:text="HaiPhong"></option></select
+            ><br /><br />
+
+            <button type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .table{
+        width: 750px;
+        height: 300px;
+
+      }
+      td img{
+        background-size: cover;
+      }
+    </style>
+</head>
+<body>
+    <h1>Danh sách nhà tuyển dụng</h1>
+    
+    <a href="/employer/add">Thêm Nhà Tuyển Dụng</a></br></br>
+    <table class="table" border="1">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Logo</th>
+            <th scope="col">Website</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="employer, iStat:${employers}">
+            <th scope="row" th:text="${iStat.index} +1"></th>
+            <td><a th:href="|employer/${employer.id}|" th:text="${employer.name}" ></a></td>
+            <td><img th:src="|/logo/${employer.logo_path}|" width="40px"/></td>
+            <td><a th:href="${employer.website}" th:text="${employer.website}" target="_blank"></a></td>
+            <td th:text="${employer.email}"></td>
+            <td><a th:href="|/employer/delete/${employer.id}|">Delete</a></td>
+            
+          </tr>
+         
+        </tbody>
+      </table>
+      <br>
+      <a href="/">Quay lại trang chủ</a>
+</body>
+</html>
