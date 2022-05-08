@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .btn-primary {
+            color: white;
+            background-color: black;
+        }
+
+    </style>
+    <title>Register New Account</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/"> Back to homepage </a>
+    </div>
+</nav>
+<!--    <h1>Register</h1>-->
+<!--    <form-->
+<!--      method="post"-->
+<!--      action="#"-->
+<!--      th:action="register"-->
+<!--      th:object="${registerrequest}"-->
+<!--    >-->
+<!--    Fullname: <input type="text" th:field="*{fullname}" />-->
+<!--      <div th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}">-->
+<!--        Fullname Error-->
+<!--      </div>-->
+<!--      <br /><br />-->
+<!--      Email: <input type="text" th:field="*{email}" />-->
+<!--      <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">-->
+<!--        Email Error-->
+<!--      </div>-->
+<!--      <br /><br />-->
+<!--      Password: <input type="password" th:field="*{password}" />-->
+<!--      <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}">-->
+<!--        Password Error-->
+<!--      </div>-->
+<!--      <br /><br />-->
+<!--      <button type="submit">SIGN UP</button>-->
+<!--    </form>-->
+
+<br>
+<form class="needs-validation" novalidate
+      method="post"
+      action="#"
+      th:action="register"
+      th:object="${registerrequest}"
+>
+    <div style="width: 300px">
+        <label for="validationCustom01" class="form-label">Full Name: </label>
+        <input type="text" th:field="*{fullname}" class="form-control" id="validationCustom01" required>
+        <div th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}">
+            Fullname Error
+        </div>
+    </div>
+    <div style="width: 300px">
+        <label for="validationCustom02" class="form-label">Email: </label>
+        <input type="text" th:field="*{email}" class="form-control" id="validationCustom02" value="Otto" required>
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+            Email Error
+        </div>
+    </div>
+    <div style="width: 300px">
+        <label for="validationCustom01" class="form-label">Password: </label>
+        <input type="password" th:field="*{password}" class="form-control" id="validationCustom01" value="Mark"
+               required>
+        <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+            Password Error
+        </div>
+        <br>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit"> Register account</button>
+        </div>
+</form>
+
+</body>
+</html>
