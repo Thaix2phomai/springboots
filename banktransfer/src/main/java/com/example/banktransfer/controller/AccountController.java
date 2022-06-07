@@ -40,7 +40,7 @@ public class AccountController {
 
     }
 
-    @GetMapping("/deposit")
+    @PostMapping("/deposit")
     @Operation(summary = "Deposit Action ")
     public ResponseEntity<?> depositAction (@Parameter(description = "deposit action")@RequestBody DepositAndWithDrawRequest depositAndWithDrawRequest){
         accountService.depositAction(depositAndWithDrawRequest.accId(), depositAndWithDrawRequest.amount());
